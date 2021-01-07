@@ -36,4 +36,5 @@ One of the features of the app is management of substitute players ("subs").  If
 ## Court Reservations
 Courts can be automatically reserved if the club uses a supported reservation system.  Currently only tennisbookings.com is supported.
 
-
+## Unit Tests
+I wrote unit tests for most of the back-end methods where practical.  Some of them are really integration tests, because they try to contact an actual service or database, but most are mocked appropriately for unit testing.
