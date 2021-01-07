@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>MyTennisPartner.Data.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>MyTennisPartner.Data.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180711222500_Migration6.cs" />
+    <Compile Remove="Migrations\20180711225107_Migration6.cs" />
+    <Compile Remove="Migrations\20180711225346_Migration6.cs" />
+    <Compile Remove="Migrations\20181110230342_Migration13.cs" />
+    <Compile Remove="Migrations\20181110231035_Migration12.cs" />
+    <Compile Remove="Migrations\20181110231259_Migration12.cs" />
+    <Compile Remove="Migrations\20190209183551_Migration16.cs" />
+    <Compile Remove="Migrations\20190209183551_Migration16.Designer.cs" />
+    <Compile Remove="Migrations\20200104164819_Migration24.cs" />
+    <Compile Remove="Migrations\20200104164819_Migration24.Designer.cs" />
+    <Compile Remove="Migrations\20200104225120_Migration24.cs" />
+    <Compile Remove="Migrations\20200104225120_Migration24.Designer.cs" />
+    <Compile Remove="Migrations\20200123222529_Migration25.cs" />
+    <Compile Remove="Migrations\20200123222529_Migration25.Designer.cs" />
+    <Compile Remove="Migrations\20200320155631_Migration27.cs" />
+    <Compile Remove="Migrations\20200320155631_Migration27.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyTennisPartner.Models\MyTennisPartner.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Migrations\20181229220705_Migration14.Designer.cs">
+      <DependentUpon>20181229220705_Migration14.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

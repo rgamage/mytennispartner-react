@@ -1,0 +1,44 @@
+﻿// working - web browser
+Host: goldriver.tennisbookings.com
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3
+Referer: https://goldriver.tennisbookings.com/Default.aspx?open=1
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Cookie: ASP.NET_SessionId=n253sow4qvgk0cjrfuhsgj1d; .ASPXAUTH=1553BBD832BAFC373408C5F5A1CB7D7C20EF8959BFD82E866CCD8F6B97A0B49D1B300914C07BA726613557EADEE50A0271D14FCFC0F553BB2B9B1293CB407D56B4B0A5ED52A87354A6A28FBF912757E10E5E220DE1C58FCF10F0F2F13F9DF2A32FBC80A8B2A9E2A48102625A3BB04E6F2F6B6C21; TennisID2=uid=Ss89TDrhVQ%3d%3d&pwd=Wd07VCjyAKg%3d&p=https%3a%2f%2fgoldriver.tennisbookings.com%2fLoginX.aspx&tlo=4%2f1%2f2019+10%3a20%3a48+PM&HideHelp=1&ShowName=0&SendReminder=0&SendReminderHours=&SendConfirmationToAllPlayers=0&SendConfirmation=0&tlout=3%2f24%2f2019+7%3a55%3a14+PM
+
+// Not Working - MTP
+Host: goldriver.tennisbookings.com
+Accept: application/json, text/json, text/x-json, text/javascript, application/xml, text/xml
+Accept-Encoding: gzip, deflate, sdch, br, gzip, deflate
+Accept-Language: en-US, en; q=0.8
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
+Connection: Keep-Alive
+Cookie: ASP.NET_SessionId=l2ha4ghoabsnakmdji13te0s; .ASPXAUTH=9D572C961FAF60772FC652705AC775DCD2AC532D350907C9AFE0B9D5600EB1A77EB0D88E104296C3F7F98D5AFE2E9713D407AD4E3317475921DF77E8751EC320FC30C9D7492A5FF53283B5112CAA444CE87F390B3176586DE2A753BF438046F7FDAD55BA6CF28F2A3E25E7947A039FD3DB8166D6; TennisID2=uid=Ss89TDrhVQ%3d%3d&pwd=&p=https%3a%2f%2fgoldriver.tennisbookings.com%2fLoginX.aspx&tlo=4%2f1%2f2019+10%3a17%3a32+PM
+Content-Length: 0
+
+// not working - added correct Accept header
+Host: goldriver.tennisbookings.com
+Accept: text/html, application/xhtml+xml, application/xml; q=0.9, image/webp, image/apng, */*; q=0.8, application/signed-exchange; v=b3
+Accept-Encoding: gzip, deflate, sdch, br, gzip, deflate
+Accept-Language: en-US, en; q=0.8
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
+Connection: Keep-Alive
+Cookie: ASP.NET_SessionId=tyx5e0xqyoo5z2cs1wnv2tnz; .ASPXAUTH=AB1EFB4F1BD97F384126FFDC6D5ACC84FFEAA2905190E6BFC6F1ABE37654FC655D8A14739443ABBE0976ED80EAC6A57782E55F6EFF3E2EB683D5BB852431874B42448F8C30DDDC67EBDEA41BB5B27049CA7D4052417A0C764635ADD4A4A2B24220A5791E757DADB2F270286BED9D09DA48802616; TennisID2=uid=Ss89TDrhVQ%3d%3d&pwd=&p=https%3a%2f%2fgoldriver.tennisbookings.com%2fLoginX.aspx&tlo=4%2f1%2f2019+10%3a28%3a51+PM
+Content-Length: 0
+
+// not working - added referer
+Host: goldriver.tennisbookings.com
+Accept: text/html, application/xhtml+xml, application/xml; q=0.9, image/webp, image/apng, */*; q=0.8, application/signed-exchange; v=b3
+Accept-Encoding: gzip, deflate, sdch, br, gzip, deflate
+Accept-Language: en-US, en; q=0.8
+Cache-Control: no-cache
+Referer: https://goldriver.tennisbookings.com/Default.aspx?open=1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
+Connection: Keep-Alive
+Cookie: ASP.NET_SessionId=fw3hhakntqfuirradmn45lf3; .ASPXAUTH=87C44EE5556D8BBCB150B3B15205363BD2D133B638AB91E7CE93D8FB98CFBE8CEBD7AFD721663372DCA23F172B7BFF1742BE3F36F4AAFCAD84D525717D502109074126FEAB35D333B8A516EFEC5AB3ACDAFB6CA4843DB80BBB7DF1FD1B17E5774FD4420426033C783230EBB56F7E33D7BF29EFC0; TennisID2=uid=Ss89TDrhVQ%3d%3d&pwd=&p=https%3a%2f%2fgoldriver.tennisbookings.com%2fLoginX.aspx&tlo=4%2f1%2f2019+10%3a41%3a15+PM
+Content-Length: 0

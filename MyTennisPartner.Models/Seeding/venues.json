@@ -1,0 +1,47 @@
+﻿[
+  {
+    "Name": "Gold River Racquet Club",
+    "VenueAddress": {
+      "Street1": "2201 Gold Rush Drive",
+      "City": "Gold River",
+      "State": "CA",
+      "Zip": "95670"
+    },
+    "VenueContact": {
+      "FirstName": "Marty",
+      "LastName": "Rothfels",
+      "Phone1": "800-555-1212",
+      "Email": "marty@example.com"
+    }
+  },
+  {
+    "Name": "Gold River Indoor Club",
+    "VenueAddress": {
+      "Street1": "11205 Pyrites Way",
+      "City": "Gold River",
+      "State": "CA",
+      "Zip": "95670"
+    },
+    "VenueContact": {
+      "FirstName": "Isabella",
+      "LastName": "Kling",
+      "Phone1": "800-555-1212",
+      "Email": "isabella@example.com"
+    }
+  },
+  {
+    "Name": "Broadstone Racquet Club",
+    "VenueAddress": {
+      "Street1": "820 Halidon Way",
+      "City": "Folsom",
+      "State": "CA",
+      "Zip": "95630"
+    },
+    "VenueContact": {
+      "FirstName": "John",
+      "LastName": "Broadstone",
+      "Phone1": "916-983-9180",
+      "Email": "tennis@broadstonetennis.com"
+    }
+  }
+]

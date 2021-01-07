@@ -1,0 +1,26 @@
+﻿[
+  {
+    "Name": "My Racquet Club",
+    "VenueAddress": {
+      "Street1": "2201 My Street",
+      "City": "My Town",
+      "State": "CA",
+      "Zip": "99999"
+    },
+    "VenueContact": {
+      "FirstName": "Albert",
+      "LastName": "Einstein",
+      "Phone1": "800-555-1212",
+      "Email": "albert@example.com"
+    },
+    "ReservationSystem": {
+      "CourtReservationProvider": 1,
+      "HostName": "goldriver.tennisbookings.com",
+      "EarliestCourtHour": 5,
+      "EarliestCourtMinute": 0,
+      "LatestCourtHour": 23,
+      "LatestCourtMinute": 0,
+      "MaxDaysAhead": 2
+    }
+  }
+]

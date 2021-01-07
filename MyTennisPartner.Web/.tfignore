@@ -1,0 +1,15 @@
+\node_modules
+\wwwroot\dist
+\wwwroot\appScripts
+\wwwroot\libs
+\wwwroot\css
+\wwwroot\fonts
+\ClientApp\dist
+\.vs
+!\wwwroot\dist\_placeholder.txt
+!\node_modules\_placeholder.txt
+!\ClientApp\dist\_placeholder.txt
+project.lock.json
+ClientApp\*.js
+ClientApp\*.js.map
+ClientApp\styles\*.min.css

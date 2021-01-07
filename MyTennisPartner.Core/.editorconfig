@@ -1,0 +1,22 @@
+# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
+root = true
+
+# Xml files
+[*.xml]
+indent_size = 2
+
+# All files
+[*]
+indent_style = space
+
+# CA1031: Do not catch general exception types
+dotnet_diagnostic.CA1031.severity = silent
+
+# CA2007: Consider calling ConfigureAwait on the awaited task
+dotnet_diagnostic.CA2007.severity = none
+
+# CA1054: Uri parameters should not be strings
+dotnet_diagnostic.CA1054.severity = none
+
+# CA1056: Uri properties should not be strings
+dotnet_diagnostic.CA1056.severity = none

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html style="margin: 0px; border: 0px; padding: 0px; background-color: #FAF9E2; background: none">
+<!-- do NOT put overflow-y:auto here or it messes up safari (Body develops scrollbars!!) -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0">
+      
+
+    <title>t</title>
+    
+    
+    <style type="text/css">
+             #Headers td {
+                 min-width:4px;
+             }
+
+              
+             #TT td {
+                 min-width:4px;
+             }
+
+              
+             #Headers div {
+                 min-width: 4px;
+             }
+
+             #Headers div {
+                 width: 4px;
+             }
+
+             #TT div {
+                 min-width: 4px;
+             }
+
+             #TT div {
+                 width: 4px;
+             }
+
+             .mytableleft td {
+                 height: 4px;
+             }
+
+              
+             .mytableright td {
+                 height: 4px;
+             }
+
+              
+             #TT td {
+                 height: 4px;
+             }
+
+             #TT img {
+                 float: left;
+                 position: relative;
+                 top: 0;
+             }
+
+        #TT td.rhspacer {background-color:#c0c2cf;border-right:1px solid #c0c2cf;border-bottom:1px solid #c0c2cf;width:43px;min-width:43px;} 
+        .LHSSpacerCell {height: 2px; }
+         </style>
+    
+
+    <link rel="stylesheet" type="text/css" href="Static/CSS40/Gridsub.css" />
+    <link type="text/css" href="Static/CSS40/Tennis2.css" rel="stylesheet" />
+
+ 
+   <link href="Static/CSS40/SmallScreen.css" rel="stylesheet" />  
+    
+
+    <script type="text/javascript">
+        var numtimeslots = parseInt('026',10) 
+        var QSStuff='d=05072020'  
+        var numCols = 25
+        var numRows = 26
+        var showRHS=true
+        var AllowMultiColumnSelects = 'no'
+        var AllowMultiSelectsWithinColumn ='no'
+        var JSMode = 'M' //'A' or 'M' for Admin or Member
+        //var viewOnlyMode
+        var isIE=/*@cc_on!@*/false;//IE detector
+        var isIE67=false
+        var defaultText="Available"
+        var gotInnerText,  poWin 
+
+        var justDoneFirstClickOnFree=0 //detect double-click on free slot
+        var onDoubleClickGoConfirm=false 
+     
+        var clubTime='May 06, 2020 13:23:55.498' 
+        var displayedDate='05/07/2020' , showTimeIndicator=false
+        var TTRowHeight, TTColWidth
+
+        //Its basically impossible to allow height of header to vary according to length of contained text. We would have to render the header to get the rendered height BEFORE
+        //we know how much height it will take up (ie. how much height is left for scrollRegion). Would likely be very browser-variable.
+
+        var gblHeaderGuffHeight //= 0+mstrHeaderDivHeight + 2 //ht of any guff above Headers AND height of header itself (used as required Y offset for scrollRegion)
+        var allowGSSelections=true
+        var magFactorX=1, magFactorY=1
+        var colTimeScales= [-333,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 ]
+
+        function bootcode() {
+              
+            return true
+        }
+
+    </script>
+
+    <script type="text/javascript" src="Static/JS62/GridSubCommonA.js"></script>
+    <script type="text/javascript" src="Static/JS62/myUtil.js"></script>
+
+    <!-- 
+    <script type="text/javascript" src="Static/JS62/GridSubMenus.js"></script>
+    <script type="text/javascript" src="Static/JS62/GridSubCandD.js"></script>
+      -->
+</head>
+<body style="margin: 0px; border: 0px; padding: 0px;" oncontextmenu="return false" onkeyup="handleEnter(event)" onload="GSInit()" onbeforeunload="dummyUL()" onunload="dummyUL()" onpageshow="doReloadIfNeeded()">
+    <form method="post" action="./gridsub.aspx?reqresourceIDs=1067469600%7c1067469601&amp;reqdates=d5605&amp;gsx=0&amp;gsy=0" id="Form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="tKJKcfQPGYkVlOnGDGOCFSpAj7pcdyZ5Jkz43023lhbLvsdohNB07MVrEfWSTdffo8nknIh9HT6jJtmtbRsboAB6/gagkizHwuCLWYBDzxcN/co0KK0o6vLDmA69yo5RT74DUQ==" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2F9590D0" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="GymzPvSrGbX7l2chqETNMyJzkZC/a8lW6NqopGPW2Ys68Axdg41CwbmI3O6seydtRSLSMel3Hh/ZNFbHvPD4O+uboiDI0R6KWh6rtqX6840GLYSSSqARlfBwkzHGHaQI4k1sYQ/o3BLnEQWCygCac1jiriE=" />
+</div>
+        
+
+        <div id="scrollregion" style="display: none; width: 100%; height: 100%; position: absolute; overflow: auto;" onscroll="shiftit()">
+            <!--this first row will become the FOOTER row-->
+
+            <table id="TT" class="mytable" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout: fixed; cursor: pointer;">
+	<tr id="TT1" mytag="7:00">
+		<td id="r1c1" class="f">&nbsp;</td><td id="r1c2" class="f">&nbsp;</td><td id="r1c3" class="f">&nbsp;</td><td id="r1c4" class="f">&nbsp;</td><td id="r1c5" class="f">&nbsp;</td><td id="r1c6" class="f">&nbsp;</td><td id="r1c7" class="f">&nbsp;</td><td id="r1c8" class="f">&nbsp;</td><td id="r1c9" class="f">&nbsp;</td><td id="r1c10" class="f">&nbsp;</td><td id="r1c11" class="f">&nbsp;</td><td id="r1c12" class="f">&nbsp;</td><td id="r1c13" class="f">&nbsp;</td><td id="r1c14" class="f">&nbsp;</td><td id="r1c15" class="f">&nbsp;</td><td id="r1c16" class="f">&nbsp;</td><td id="r1c17" class="f">&nbsp;</td><td id="r1c18" class="f">&nbsp;</td><td id="r1c19" class="f">&nbsp;</td><td id="r1c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r1c21" class="f">&nbsp;</td><td id="r1c22" class="f">&nbsp;</td><td id="r1c23" class="f">&nbsp;</td><td id="r1c24" class="f">&nbsp;</td><td id="r1c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT2" mytag="7:30">
+		<td id="r2c1" class="f">&nbsp;</td><td id="r2c2" class="f">&nbsp;</td><td id="r2c3" class="f">&nbsp;</td><td id="r2c4" class="f">&nbsp;</td><td id="r2c5" class="f">&nbsp;</td><td id="r2c6" class="f">&nbsp;</td><td id="r2c7" class="f">&nbsp;</td><td id="r2c8" class="f">&nbsp;</td><td id="r2c9" class="f">&nbsp;</td><td id="r2c10" class="f">&nbsp;</td><td id="r2c11" class="f">&nbsp;</td><td id="r2c12" class="f">&nbsp;</td><td id="r2c13" class="f">&nbsp;</td><td id="r2c14" class="f">&nbsp;</td><td id="r2c15" class="f">&nbsp;</td><td id="r2c16" class="f">&nbsp;</td><td id="r2c17" class="f">&nbsp;</td><td id="r2c18" class="f">&nbsp;</td><td id="r2c19" class="f">&nbsp;</td><td id="r2c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r2c21" class="f">&nbsp;</td><td id="r2c22" class="f">&nbsp;</td><td id="r2c23" class="f">&nbsp;</td><td id="r2c24" class="f">&nbsp;</td><td id="r2c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT3" mytag="8:00">
+		<td id="r3c1" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Judy<br>Lesson</div></td><td id="r3c2" class="f">&nbsp;</td><td id="r3c3" class="f">&nbsp;</td><td id="r3c4" class="f">&nbsp;</td><td id="r3c5" class="f">&nbsp;</td><td id="r3c6" class="f">&nbsp;</td><td id="r3c7" class="f">&nbsp;</td><td id="r3c8" class="x" rowspan="9" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r3c9" class="f">&nbsp;</td><td id="r3c10" class="f">&nbsp;</td><td id="r3c11" class="f">&nbsp;</td><td id="r3c12" class="f">&nbsp;</td><td id="r3c13" class="f">&nbsp;</td><td id="r3c14" class="f">&nbsp;</td><td id="r3c15" class="f">&nbsp;</td><td id="r3c16" class="f">&nbsp;</td><td id="r3c17" class="f">&nbsp;</td><td id="r3c18" class="f">&nbsp;</td><td id="r3c19" class="f">&nbsp;</td><td id="r3c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r3c21" class="f">&nbsp;</td><td id="r3c22" class="f">&nbsp;</td><td id="r3c23" class="f">&nbsp;</td><td id="r3c24" class="f">&nbsp;</td><td id="r3c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT4" mytag="8:30">
+		<td id="r4c2" class="f">&nbsp;</td><td id="r4c3" class="f">&nbsp;</td><td id="r4c4" class="f">&nbsp;</td><td id="r4c5" class="f">&nbsp;</td><td id="r4c6" class="f">&nbsp;</td><td id="r4c7" class="f">&nbsp;</td><td id="r4c9" class="f">&nbsp;</td><td id="r4c10" class="f">&nbsp;</td><td id="r4c11" class="f">&nbsp;</td><td id="r4c12" class="f">&nbsp;</td><td id="r4c13" class="f">&nbsp;</td><td id="r4c14" class="f">&nbsp;</td><td id="r4c15" class="f">&nbsp;</td><td id="r4c16" class="f">&nbsp;</td><td id="r4c17" class="f">&nbsp;</td><td id="r4c18" class="f">&nbsp;</td><td id="r4c19" class="f">&nbsp;</td><td id="r4c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r4c21" class="f">&nbsp;</td><td id="r4c22" class="f">&nbsp;</td><td id="r4c23" class="f">&nbsp;</td><td id="r4c24" class="f">&nbsp;</td><td id="r4c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT5" mytag="9:00">
+		<td id="r5c1" class="x" rowspan="4" style="background-color:#99b65f;"><div style="height:0px;" >4.0 ladies Lynn, Shannon,Kris,<br>Lesson</div></td><td id="r5c2" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Tom Statheros<br>Doubles</div></td><td id="r5c3" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Julie Carter<br>Kim Becker<br>Singles</div></td><td id="r5c4" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r5c5" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Laurie Dunlap<br>Janice Waldrop<br>+2<br>Doubles</div></td><td id="r5c6" class="f">&nbsp;</td><td id="r5c7" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Lori Anderson<br>Pamela Keely<br>Lesson</div></td><td id="r5c9" class="f">&nbsp;</td><td id="r5c10" class="x" rowspan="2" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r5c11" class="f">&nbsp;</td><td id="r5c12" class="x" rowspan="7" style="background-color:#99b65f;"><div style="height:0px;" >Kristin Miguel<br>Carrie Blythe<br>+1<br>Lesson</div></td><td id="r5c13" class="x" rowspan="4" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r5c14" class="f">&nbsp;</td><td id="r5c15" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r5c16" class="f">&nbsp;</td><td id="r5c17" class="f">&nbsp;</td><td id="r5c18" class="f">&nbsp;</td><td id="r5c19" class="f">&nbsp;</td><td id="r5c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r5c21" class="x" rowspan="3" style="background-color:#FF3333;"><div style="height:0px;" >Pickleball</div></td><td id="r5c22" class="x" rowspan="3" style="background-color:#FF3333;"><div style="height:0px;" >Cheryl Williams<br>Pickleball</div></td><td id="r5c23" class="x" rowspan="2" style="background-color:#b19dff;"><div style="height:0px;" >Doubles</div></td><td id="r5c24" class="f">&nbsp;</td><td id="r5c25" class="x" rowspan="3" style="background-color:#FF3333;"><div style="height:0px;" >Antonio Garcia<br>John Derego<br>+1<br>Pickleball</div></td><td class="rhspacer"></td>
+	</tr><tr id="TT6" mytag="9:30">
+		<td id="r6c6" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r6c9" class="f">&nbsp;</td><td id="r6c11" class="f">&nbsp;</td><td id="r6c14" class="f">&nbsp;</td><td id="r6c16" class="f">&nbsp;</td><td id="r6c17" class="f">&nbsp;</td><td id="r6c18" class="f">&nbsp;</td><td id="r6c19" class="f">&nbsp;</td><td id="r6c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r6c24" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT7" mytag="10:00">
+		<td id="r7c7" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Pam Armas<br>Lesson</div></td><td id="r7c9" class="f">&nbsp;</td><td id="r7c10" class="f">&nbsp;</td><td id="r7c11" class="f">&nbsp;</td><td id="r7c14" class="f">&nbsp;</td><td id="r7c16" class="f">&nbsp;</td><td id="r7c17" class="f">&nbsp;</td><td id="r7c18" class="f">&nbsp;</td><td id="r7c19" class="f">&nbsp;</td><td id="r7c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r7c23" class="f">&nbsp;</td><td id="r7c24" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT8" mytag="10:30">
+		<td id="r8c2" class="f">&nbsp;</td><td id="r8c3" class="x" rowspan="2" style="background-color:#ff9661;"><div style="height:0px;" >Albert Delgado<br>+1<br>Singles</div></td><td id="r8c4" class="f">&nbsp;</td><td id="r8c5" class="f">&nbsp;</td><td id="r8c9" class="f">&nbsp;</td><td id="r8c10" class="f">&nbsp;</td><td id="r8c11" class="f">&nbsp;</td><td id="r8c14" class="f">&nbsp;</td><td id="r8c15" class="f">&nbsp;</td><td id="r8c16" class="f">&nbsp;</td><td id="r8c17" class="f">&nbsp;</td><td id="r8c18" class="f">&nbsp;</td><td id="r8c19" class="f">&nbsp;</td><td id="r8c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r8c21" class="f">&nbsp;</td><td id="r8c22" class="f">&nbsp;</td><td id="r8c23" class="f">&nbsp;</td><td id="r8c24" class="f">&nbsp;</td><td id="r8c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT9" mytag="11:00">
+		<td id="r9c1" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Diane Peck<br>Lesson</div></td><td id="r9c2" class="f">&nbsp;</td><td id="r9c4" class="f">&nbsp;</td><td id="r9c5" class="f">&nbsp;</td><td id="r9c6" class="f">&nbsp;</td><td id="r9c7" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r9c9" class="f">&nbsp;</td><td id="r9c10" class="f">&nbsp;</td><td id="r9c11" class="f">&nbsp;</td><td id="r9c13" class="f">&nbsp;</td><td id="r9c14" class="f">&nbsp;</td><td id="r9c15" class="f">&nbsp;</td><td id="r9c16" class="f">&nbsp;</td><td id="r9c17" class="f">&nbsp;</td><td id="r9c18" class="f">&nbsp;</td><td id="r9c19" class="f">&nbsp;</td><td id="r9c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r9c21" class="f">&nbsp;</td><td id="r9c22" class="f">&nbsp;</td><td id="r9c23" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r9c24" class="f">&nbsp;</td><td id="r9c25" class="x" rowspan="2" style="background-color:#FF3333;"><div style="height:0px;" >Jan Bromberg<br>Rich Bromberg<br>Pickleball</div></td><td class="rhspacer"></td>
+	</tr><tr id="TT10" mytag="11:30">
+		<td id="r10c2" class="f">&nbsp;</td><td id="r10c3" class="f">&nbsp;</td><td id="r10c4" class="f">&nbsp;</td><td id="r10c5" class="f">&nbsp;</td><td id="r10c6" class="f">&nbsp;</td><td id="r10c9" class="f">&nbsp;</td><td id="r10c10" class="f">&nbsp;</td><td id="r10c11" class="f">&nbsp;</td><td id="r10c13" class="f">&nbsp;</td><td id="r10c14" class="f">&nbsp;</td><td id="r10c15" class="f">&nbsp;</td><td id="r10c16" class="f">&nbsp;</td><td id="r10c17" class="f">&nbsp;</td><td id="r10c18" class="f">&nbsp;</td><td id="r10c19" class="f">&nbsp;</td><td id="r10c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r10c21" class="f">&nbsp;</td><td id="r10c22" class="f">&nbsp;</td><td id="r10c24" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT11" mytag="12:00pm">
+		<td id="r11c1" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Peter<br>Lesson</div></td><td id="r11c2" class="f">&nbsp;</td><td id="r11c3" class="f">&nbsp;</td><td id="r11c4" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r11c5" class="f">&nbsp;</td><td id="r11c6" class="f">&nbsp;</td><td id="r11c7" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r11c9" class="f">&nbsp;</td><td id="r11c10" class="f">&nbsp;</td><td id="r11c11" class="f">&nbsp;</td><td id="r11c13" class="f">&nbsp;</td><td id="r11c14" class="f">&nbsp;</td><td id="r11c15" class="f">&nbsp;</td><td id="r11c16" class="f">&nbsp;</td><td id="r11c17" class="f">&nbsp;</td><td id="r11c18" class="f">&nbsp;</td><td id="r11c19" class="f">&nbsp;</td><td id="r11c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r11c21" class="f">&nbsp;</td><td id="r11c22" class="f">&nbsp;</td><td id="r11c24" class="f">&nbsp;</td><td id="r11c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT12" mytag="12:30pm">
+		<td id="r12c2" class="f">&nbsp;</td><td id="r12c3" class="f">&nbsp;</td><td id="r12c5" class="f">&nbsp;</td><td id="r12c6" class="f">&nbsp;</td><td id="r12c8" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r12c9" class="f">&nbsp;</td><td id="r12c10" class="f">&nbsp;</td><td id="r12c11" class="f">&nbsp;</td><td id="r12c12" class="f">&nbsp;</td><td id="r12c13" class="f">&nbsp;</td><td id="r12c14" class="f">&nbsp;</td><td id="r12c15" class="f">&nbsp;</td><td id="r12c16" class="f">&nbsp;</td><td id="r12c17" class="f">&nbsp;</td><td id="r12c18" class="f">&nbsp;</td><td id="r12c19" class="f">&nbsp;</td><td id="r12c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r12c21" class="f">&nbsp;</td><td id="r12c22" class="f">&nbsp;</td><td id="r12c23" class="f">&nbsp;</td><td id="r12c24" class="f">&nbsp;</td><td id="r12c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT13" mytag="1:00pm">
+		<td id="r13c1" class="x" rowspan="3" style="background-color:#99b65f;"><div style="height:0px;" >Dave Judy<br>Lesson</div></td><td id="r13c2" class="f">&nbsp;</td><td id="r13c3" class="f">&nbsp;</td><td id="r13c5" class="f">&nbsp;</td><td id="r13c6" class="f">&nbsp;</td><td id="r13c7" class="f">&nbsp;</td><td id="r13c9" class="f">&nbsp;</td><td id="r13c10" class="f">&nbsp;</td><td id="r13c11" class="f">&nbsp;</td><td id="r13c12" class="f">&nbsp;</td><td id="r13c13" class="f">&nbsp;</td><td id="r13c14" class="f">&nbsp;</td><td id="r13c15" class="f">&nbsp;</td><td id="r13c16" class="f">&nbsp;</td><td id="r13c17" class="f">&nbsp;</td><td id="r13c18" class="f">&nbsp;</td><td id="r13c19" class="f">&nbsp;</td><td id="r13c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r13c21" class="f">&nbsp;</td><td id="r13c22" class="f">&nbsp;</td><td id="r13c23" class="f">&nbsp;</td><td id="r13c24" class="f">&nbsp;</td><td id="r13c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT14" mytag="1:30pm">
+		<td id="r14c2" class="f">&nbsp;</td><td id="r14c3" class="f">&nbsp;</td><td id="r14c4" class="f">&nbsp;</td><td id="r14c5" class="f">&nbsp;</td><td id="r14c6" class="f">&nbsp;</td><td id="r14c7" class="f">&nbsp;</td><td id="r14c8" class="f">&nbsp;</td><td id="r14c9" class="f">&nbsp;</td><td id="r14c10" class="f">&nbsp;</td><td id="r14c11" class="f">&nbsp;</td><td id="r14c12" class="f">&nbsp;</td><td id="r14c13" class="f">&nbsp;</td><td id="r14c14" class="f">&nbsp;</td><td id="r14c15" class="f">&nbsp;</td><td id="r14c16" class="f">&nbsp;</td><td id="r14c17" class="f">&nbsp;</td><td id="r14c18" class="f">&nbsp;</td><td id="r14c19" class="f">&nbsp;</td><td id="r14c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r14c21" class="f">&nbsp;</td><td id="r14c22" class="f">&nbsp;</td><td id="r14c23" class="f">&nbsp;</td><td id="r14c24" class="f">&nbsp;</td><td id="r14c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT15" mytag="2:00pm">
+		<td id="r15c2" class="f">&nbsp;</td><td id="r15c3" class="f">&nbsp;</td><td id="r15c4" class="f">&nbsp;</td><td id="r15c5" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Doubles</div></td><td id="r15c6" class="f">&nbsp;</td><td id="r15c7" class="f">&nbsp;</td><td id="r15c8" class="x" rowspan="12" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r15c9" class="f">&nbsp;</td><td id="r15c10" class="f">&nbsp;</td><td id="r15c11" class="f">&nbsp;</td><td id="r15c12" class="f">&nbsp;</td><td id="r15c13" class="f">&nbsp;</td><td id="r15c14" class="f">&nbsp;</td><td id="r15c15" class="f">&nbsp;</td><td id="r15c16" class="f">&nbsp;</td><td id="r15c17" class="f">&nbsp;</td><td id="r15c18" class="f">&nbsp;</td><td id="r15c19" class="f">&nbsp;</td><td id="r15c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r15c21" class="f">&nbsp;</td><td id="r15c22" class="f">&nbsp;</td><td id="r15c23" class="f">&nbsp;</td><td id="r15c24" class="f">&nbsp;</td><td id="r15c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT16" mytag="2:30pm">
+		<td id="r16c1" class="x" rowspan="5" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r16c2" class="f">&nbsp;</td><td id="r16c3" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Denise Kimes<br>Pamela Russo<br>Amy Putty<br>+1<br>Doubles</div></td><td id="r16c4" class="f">&nbsp;</td><td id="r16c6" class="f">&nbsp;</td><td id="r16c7" class="f">&nbsp;</td><td id="r16c9" class="f">&nbsp;</td><td id="r16c10" class="f">&nbsp;</td><td id="r16c11" class="f">&nbsp;</td><td id="r16c12" class="f">&nbsp;</td><td id="r16c13" class="f">&nbsp;</td><td id="r16c14" class="f">&nbsp;</td><td id="r16c15" class="f">&nbsp;</td><td id="r16c16" class="f">&nbsp;</td><td id="r16c17" class="f">&nbsp;</td><td id="r16c18" class="f">&nbsp;</td><td id="r16c19" class="f">&nbsp;</td><td id="r16c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r16c21" class="f">&nbsp;</td><td id="r16c22" class="f">&nbsp;</td><td id="r16c23" class="f">&nbsp;</td><td id="r16c24" class="f">&nbsp;</td><td id="r16c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT17" mytag="3:00pm">
+		<td id="r17c2" class="f">&nbsp;</td><td id="r17c4" class="f">&nbsp;</td><td id="r17c6" class="f">&nbsp;</td><td id="r17c7" class="f">&nbsp;</td><td id="r17c9" class="f">&nbsp;</td><td id="r17c10" class="f">&nbsp;</td><td id="r17c11" class="f">&nbsp;</td><td id="r17c12" class="f">&nbsp;</td><td id="r17c13" class="f">&nbsp;</td><td id="r17c14" class="f">&nbsp;</td><td id="r17c15" class="f">&nbsp;</td><td id="r17c16" class="f">&nbsp;</td><td id="r17c17" class="f">&nbsp;</td><td id="r17c18" class="f">&nbsp;</td><td id="r17c19" class="f">&nbsp;</td><td id="r17c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r17c21" class="f">&nbsp;</td><td id="r17c22" class="f">&nbsp;</td><td id="r17c23" class="f">&nbsp;</td><td id="r17c24" class="f">&nbsp;</td><td id="r17c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT18" mytag="3:30pm">
+		<td id="r18c2" class="f">&nbsp;</td><td id="r18c4" class="f">&nbsp;</td><td id="r18c5" class="f">&nbsp;</td><td id="r18c6" class="f">&nbsp;</td><td id="r18c7" class="f">&nbsp;</td><td id="r18c9" class="f">&nbsp;</td><td id="r18c10" class="f">&nbsp;</td><td id="r18c11" class="f">&nbsp;</td><td id="r18c12" class="f">&nbsp;</td><td id="r18c13" class="f">&nbsp;</td><td id="r18c14" class="f">&nbsp;</td><td id="r18c15" class="f">&nbsp;</td><td id="r18c16" class="f">&nbsp;</td><td id="r18c17" class="f">&nbsp;</td><td id="r18c18" class="f">&nbsp;</td><td id="r18c19" class="f">&nbsp;</td><td id="r18c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r18c21" class="f">&nbsp;</td><td id="r18c22" class="f">&nbsp;</td><td id="r18c23" class="f">&nbsp;</td><td id="r18c24" class="f">&nbsp;</td><td id="r18c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT19" mytag="4:00pm">
+		<td id="r19c2" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >James Jhang<br>Singles</div></td><td id="r19c3" class="f">&nbsp;</td><td id="r19c4" class="f">&nbsp;</td><td id="r19c5" class="f">&nbsp;</td><td id="r19c6" class="f">&nbsp;</td><td id="r19c7" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r19c9" class="f">&nbsp;</td><td id="r19c10" class="f">&nbsp;</td><td id="r19c11" class="f">&nbsp;</td><td id="r19c12" class="f">&nbsp;</td><td id="r19c13" class="f">&nbsp;</td><td id="r19c14" class="f">&nbsp;</td><td id="r19c15" class="f">&nbsp;</td><td id="r19c16" class="f">&nbsp;</td><td id="r19c17" class="f">&nbsp;</td><td id="r19c18" class="f">&nbsp;</td><td id="r19c19" class="f">&nbsp;</td><td id="r19c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r19c21" class="f">&nbsp;</td><td id="r19c22" class="f">&nbsp;</td><td id="r19c23" class="f">&nbsp;</td><td id="r19c24" class="f">&nbsp;</td><td id="r19c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT20" mytag="4:30pm">
+		<td id="r20c3" class="f">&nbsp;</td><td id="r20c4" class="f">&nbsp;</td><td id="r20c5" class="f">&nbsp;</td><td id="r20c6" class="f">&nbsp;</td><td id="r20c9" class="f">&nbsp;</td><td id="r20c10" class="f">&nbsp;</td><td id="r20c11" class="f">&nbsp;</td><td id="r20c12" class="f">&nbsp;</td><td id="r20c13" class="f">&nbsp;</td><td id="r20c14" class="f">&nbsp;</td><td id="r20c15" class="f">&nbsp;</td><td id="r20c16" class="f">&nbsp;</td><td id="r20c17" class="f">&nbsp;</td><td id="r20c18" class="f">&nbsp;</td><td id="r20c19" class="f">&nbsp;</td><td id="r20c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r20c21" class="f">&nbsp;</td><td id="r20c22" class="f">&nbsp;</td><td id="r20c23" class="f">&nbsp;</td><td id="r20c24" class="f">&nbsp;</td><td id="r20c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT21" mytag="5:00pm">
+		<td id="r21c1" class="f">&nbsp;</td><td id="r21c3" class="f">&nbsp;</td><td id="r21c4" class="f">&nbsp;</td><td id="r21c5" class="f">&nbsp;</td><td id="r21c6" class="f">&nbsp;</td><td id="r21c7" class="x" rowspan="3" style="background-color:#33CC99;"><div style="height:0px;" >Irenessa Oliva<br>Group Lesson</div></td><td id="r21c9" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Robert Gasbarro<br>+3<br>Doubles</div></td><td id="r21c10" class="f">&nbsp;</td><td id="r21c11" class="f">&nbsp;</td><td id="r21c12" class="f">&nbsp;</td><td id="r21c13" class="f">&nbsp;</td><td id="r21c14" class="f">&nbsp;</td><td id="r21c15" class="f">&nbsp;</td><td id="r21c16" class="f">&nbsp;</td><td id="r21c17" class="f">&nbsp;</td><td id="r21c18" class="f">&nbsp;</td><td id="r21c19" class="f">&nbsp;</td><td id="r21c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r21c21" class="f">&nbsp;</td><td id="r21c22" class="f">&nbsp;</td><td id="r21c23" class="f">&nbsp;</td><td id="r21c24" class="f">&nbsp;</td><td id="r21c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT22" mytag="5:30pm">
+		<td id="r22c1" class="f">&nbsp;</td><td id="r22c2" class="f">&nbsp;</td><td id="r22c3" class="f">&nbsp;</td><td id="r22c4" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Karen Williams<br>Daune Kirrene<br>Singles</div></td><td id="r22c5" class="f">&nbsp;</td><td id="r22c6" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Amir Jabery<br>+1<br>Doubles</div></td><td id="r22c10" class="f">&nbsp;</td><td id="r22c11" class="f">&nbsp;</td><td id="r22c12" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r22c13" class="f">&nbsp;</td><td id="r22c14" class="f">&nbsp;</td><td id="r22c15" class="f">&nbsp;</td><td id="r22c16" class="f">&nbsp;</td><td id="r22c17" class="f">&nbsp;</td><td id="r22c18" class="f">&nbsp;</td><td id="r22c19" class="f">&nbsp;</td><td id="r22c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r22c21" class="f">&nbsp;</td><td id="r22c22" class="f">&nbsp;</td><td id="r22c23" class="f">&nbsp;</td><td id="r22c24" class="f">&nbsp;</td><td id="r22c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT23" mytag="6:00pm">
+		<td id="r23c1" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r23c2" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Amy Putty<br>Roger Putty<br>Singles</div></td><td id="r23c3" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Dana Newell<br>+1<br>Doubles</div></td><td id="r23c5" class="x" R="23907155" rowspan="3" style="background-color:orange;cursor:pointer;text-decoration:underline;"><div style="height:0px;" >(My Booking)<br />Randy Gamage<br>Doubles</div></td><td id="r23c10" class="x" rowspan="3" style="background-color:#b19dff;"><div style="height:0px;" >Saumirah McWoodson<br>Jeff Chale<br>Doubles</div></td><td id="r23c11" class="f">&nbsp;</td><td id="r23c13" class="x" rowspan="4" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r23c14" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Lori Anderson<br>Singles</div></td><td id="r23c15" class="f">&nbsp;</td><td id="r23c16" class="f">&nbsp;</td><td id="r23c17" class="f">&nbsp;</td><td id="r23c18" class="f">&nbsp;</td><td id="r23c19" class="f">&nbsp;</td><td id="r23c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r23c21" class="f">&nbsp;</td><td id="r23c22" class="f">&nbsp;</td><td id="r23c23" class="f">&nbsp;</td><td id="r23c24" class="f">&nbsp;</td><td id="r23c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT24" mytag="6:30pm">
+		<td id="r24c7" class="x" rowspan="2" style="background-color:#99b65f;"><div style="height:0px;" >Lesson</div></td><td id="r24c9" class="f">&nbsp;</td><td id="r24c11" class="x" rowspan="3" style="background-color:#ff9661;"><div style="height:0px;" >Singles</div></td><td id="r24c15" class="f">&nbsp;</td><td id="r24c16" class="f">&nbsp;</td><td id="r24c17" class="f">&nbsp;</td><td id="r24c18" class="f">&nbsp;</td><td id="r24c19" class="f">&nbsp;</td><td id="r24c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r24c21" class="f">&nbsp;</td><td id="r24c22" class="f">&nbsp;</td><td id="r24c23" class="f">&nbsp;</td><td id="r24c24" class="f">&nbsp;</td><td id="r24c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT25" mytag="7:00pm">
+		<td id="r25c4" class="f">&nbsp;</td><td id="r25c6" class="f">&nbsp;</td><td id="r25c9" class="f">&nbsp;</td><td id="r25c12" class="f">&nbsp;</td><td id="r25c15" class="f">&nbsp;</td><td id="r25c16" class="f">&nbsp;</td><td id="r25c17" class="f">&nbsp;</td><td id="r25c18" class="f">&nbsp;</td><td id="r25c19" class="f">&nbsp;</td><td id="r25c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r25c21" class="f">&nbsp;</td><td id="r25c22" class="f">&nbsp;</td><td id="r25c23" class="f">&nbsp;</td><td id="r25c24" class="f">&nbsp;</td><td id="r25c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TT26" mytag="7:30pm">
+		<td id="r26c1" class="f">&nbsp;</td><td id="r26c2" class="f">&nbsp;</td><td id="r26c3" class="f">&nbsp;</td><td id="r26c4" class="f">&nbsp;</td><td id="r26c5" class="f">&nbsp;</td><td id="r26c6" class="f">&nbsp;</td><td id="r26c7" class="f">&nbsp;</td><td id="r26c9" class="f">&nbsp;</td><td id="r26c10" class="f">&nbsp;</td><td id="r26c12" class="f">&nbsp;</td><td id="r26c14" class="f">&nbsp;</td><td id="r26c15" class="f">&nbsp;</td><td id="r26c16" class="f">&nbsp;</td><td id="r26c17" class="f">&nbsp;</td><td id="r26c18" class="f">&nbsp;</td><td id="r26c19" class="f">&nbsp;</td><td id="r26c20" class="f" style="border-right:2px solid white;">&nbsp;</td><td id="r26c21" class="f">&nbsp;</td><td id="r26c22" class="f">&nbsp;</td><td id="r26c23" class="f">&nbsp;</td><td id="r26c24" class="f">&nbsp;</td><td id="r26c25" class="f">&nbsp;</td><td class="rhspacer"></td>
+	</tr><tr id="TableRow1" class="fcell" style="color:White;background-color:#2F5681;table-layout: fixed; cursor: default;">
+		<td id="TT27" bgcolor="#3e71a8" mytag="8:00pm"><div class="fdiv">#1</div></td><td bgcolor="#3e71a8"><div class="fdiv">Stadium</div></td><td bgcolor="#3e71a8"><div class="fdiv">#3</div></td><td bgcolor="#3e71a8"><div class="fdiv">#4</div></td><td bgcolor="#3e71a8"><div class="fdiv">#5</div></td><td bgcolor="#3e71a8"><div class="fdiv">#6</div></td><td bgcolor="#3e71a8"><div class="fdiv">#7</div></td><td bgcolor="#3e71a8"><div class="fdiv">#8</div></td><td bgcolor="#3e71a8"><div class="fdiv">#9</div></td><td bgcolor="#3e71a8"><div class="fdiv">#10</div></td><td bgcolor="#3e71a8"><div class="fdiv">#11</div></td><td bgcolor="#3e71a8"><div class="fdiv">#12</div></td><td bgcolor="#3e71a8"><div class="fdiv">#13</div></td><td bgcolor="#3e71a8"><div class="fdiv">#14</div></td><td bgcolor="#3e71a8"><div class="fdiv">#15</div></td><td bgcolor="#3e71a8"><div class="fdiv">#16</div></td><td bgcolor="#3e71a8"><div class="fdiv">#17</div></td><td bgcolor="#3e71a8"><div class="fdiv">#18</div></td><td bgcolor="#3e71a8"><div class="fdiv">#19</div></td><td bgcolor="#3e71a8" style="border-right:solid 2px;"><div class="fdiv">#20</div></td><td bgcolor="#cb7127"><div class="fdiv">#21</div></td><td bgcolor="#cb7127"><div class="fdiv">#22</div></td><td bgcolor="#cb7127"><div class="fdiv">#23</div></td><td bgcolor="#cb7127"><div class="fdiv">#24</div></td><td bgcolor="#cb7127"><div class="fdiv">#25</div></td><td class="rhspacer"></td>
+	</tr>
+</table>
+
+
+            <div id="RHSContainerDiv" style="position: absolute; z-index: 100; width: 44px; height: 300px; background-color: #c0c2cf">
+
+                <img src="Static/I/timearrow2.png" id="timeIndicator2" style="visibility: hidden; position: absolute; top: -66px; left: 12px; z-index: 102" />
+                
+                <table id="RHS1" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr><tr>
+		<td style="font-weight:bold;">&nbsp;</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">8:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">9:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">10:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">11:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">12:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">1:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">2:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">3:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">4:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">5:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">6:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">7:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr style="height:24px;">
+		<td style="font-weight:bold;height:24px;">8:00</td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+
+                <table id="RHS2" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+
+                <table id="RHS3" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+
+                <table id="RHS4" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr id="TableRow5">
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+
+                <table id="RHS5" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+
+                <table id="RHS6" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+                <table id="RHS7" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+                <table id="RHS8" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+                <table id="RHS9" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+                <!-- in code we set this first cell height to 23px for all except IE -->
+                <table id="RHS10" class="mytableright" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            </div>
+
+        </div>
+
+        
+
+        
+
+        <div id="myshieldy" style="position: absolute; z-index: 100; top: 0px; background-color: #c0c2cf">
+            <div id="tentBlock" style="position: absolute; top: 99px; left: 2px; width: 11px; background-color: #fff99b; z-index: 10; border-radius: 4px"></div>
+            <img src="Static/I/TimeArrow4.png" id="timeIndicator" style="position: absolute; top: -66px; left: 2px; z-index: 102" />
+
+            
+            <table id="LHS1" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr><tr>
+		<td style="font-weight:bold;">7:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">8:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">9:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">10:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">11:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">12:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">1:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">2:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">3:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">4:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">5:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">6:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr>
+		<td style="font-weight:bold;">7:00</td>
+	</tr><tr>
+		<td>:30</td>
+	</tr><tr style="height:24px;">
+		<td style="font-weight:bold;height:24px;">8:00</td>
+	</tr>
+</table>
+            <table id="LHS2" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS3" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS4" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS5" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS6" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS7" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS8" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS9" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+            <table id="LHS10" class="mytableleft" cellspacing="0" cellpadding="0" onclick="selRow(event)" style="border-collapse:collapse;display: none">
+	<tr>
+		<td style="height:0px"><div Class="LHSSpacerCell"></div></td>
+	</tr>
+</table>
+
+        </div>
+
+        <div id="blockpanel" style="z-index: 999; left: 0px; position: absolute; top: 0px; height: 15px; width: 41px; background-color: #c0c2cf"></div>
+
+        
+        <table id="Headers" class="myheader" cellspacing="0" cellpadding="0" style="border-collapse:collapse;table-layout: fixed; z-index: -1; left: 43px; position: absolute; top: 0px; color: white; border: solid 1px white; left: -888px">
+	<tr>
+		<td id="h1" pass="5053|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #1</div></td><td id="h2" pass="5054|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - Stadium</div></td><td id="h3" pass="5055|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #3</div></td><td id="h4" pass="5056|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #4</div></td><td id="h5" pass="5057|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #5</div></td><td id="h6" pass="5058|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #6</div></td><td id="h7" pass="5059|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #7</div></td><td id="h8" pass="5060|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #8</div></td><td id="h9" pass="5061|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #9</div></td><td id="h10" pass="5062|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #10</div></td><td id="h11" pass="5063|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #11</div></td><td id="h12" pass="5064|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #12</div></td><td id="h13" pass="5065|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #13</div></td><td id="h14" pass="5066|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #14</div></td><td id="h15" pass="5067|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #15</div></td><td id="h16" pass="5068|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #16</div></td><td id="h17" pass="5069|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #17</div></td><td id="h18" pass="5070|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #18</div></td><td id="h19" pass="5071|" selstr="" bgcolor="#3e71a8" md="90"><div class="hdiv">North (Lighted) - #19</div></td><td id="h20" pass="5072|" selstr="" bgcolor="#3e71a8" md="90" sep="1" style="border-right:solid 2px;"><div class="hdiv">North (Lighted) - #20</div></td><td id="h21" pass="5073|" selstr="" bgcolor="#cb7127" md="90"><div class="hdiv">Tennis & PB - #21</div></td><td id="h22" pass="5074|" selstr="" bgcolor="#cb7127" md="90"><div class="hdiv">Tennis & PB - #22</div></td><td id="h23" pass="5075|" selstr="" bgcolor="#cb7127" md="90"><div class="hdiv">Tennis & PB - #23</div></td><td id="h24" pass="5076|" selstr="" bgcolor="#cb7127" md="90"><div class="hdiv">Tennis & PB - #24</div></td><td id="h25" pass="5077|" selstr="" bgcolor="#cb7127" md="90"><div class="hdiv">Tennis & PB - #25</div></td><td style="background-color:#C0C2CF;border-left:solid 1px white;border-right:solid 1px #c0c2cf;width:43px;min-width:42px;border-bottom:solid #c0c2cf;">&nbsp;</td>
+	</tr>
+</table>
+
+
+        
+        <input name="txtselections" type="hidden" id="txtselections" style="width: 16px; height: 24px;" />
+        
+        <!--menu1 and dragDiv -->
+        <div id="ctitle" style="background-color: #fbfbb3; padding: 2px; display: none; color: #444444; z-index: 888; position: absolute; border: solid 1px #aaaaaa; font-size: 11px; max-width: 300px; box-shadow: 5px 5px 3px 0px rgba(60,60,60,0.5)">
+            
+        </div>
+
+    </form>
+</body>
+</html>
+
+
+
+

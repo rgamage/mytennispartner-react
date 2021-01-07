@@ -1,0 +1,269 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <DebugType>Full</DebugType>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".editorconfig" />
+    <None Remove="ClientApp\branding\Branding.ts" />
+    <None Remove="ClientApp\components\Auth.tsx" />
+    <None Remove="ClientApp\components\Common\AvailabilityModal.tsx" />
+    <None Remove="ClientApp\components\Common\AvailSubsModal.tsx" />
+    <None Remove="ClientApp\components\Common\ConfirmationModal.tsx" />
+    <None Remove="ClientApp\components\Common\FormInputDateTime.tsx" />
+    <None Remove="ClientApp\components\Common\FormInputSelectAsync.tsx" />
+    <None Remove="ClientApp\components\Common\FormInputSelectHtml.tsx" />
+    <None Remove="ClientApp\components\Common\FormInputText.tsx" />
+    <None Remove="ClientApp\components\Common\FormInputTime.tsx" />
+    <None Remove="ClientApp\components\Common\Loader.tsx" />
+    <None Remove="ClientApp\components\Common\OkCancelBar.tsx" />
+    <None Remove="ClientApp\components\Common\PrivateRoute.tsx" />
+    <None Remove="ClientApp\components\Common\SaveDeleteBar.tsx" />
+    <None Remove="ClientApp\components\Common\ValidationMessage.tsx" />
+    <None Remove="ClientApp\components\Dashboard.tsx" />
+    <None Remove="ClientApp\components\FormComponentBase.ts" />
+    <None Remove="ClientApp\components\Guides\CourtReservationsGuide.tsx" />
+    <None Remove="ClientApp\components\Leagues.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueAvailability.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueDetails.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueMatchItem.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueMemberItem.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueRoster.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueSchedule.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueSearchItem.tsx" />
+    <None Remove="ClientApp\components\Leagues\LeagueSummary.tsx" />
+    <None Remove="ClientApp\components\Leagues\MatchManager.tsx" />
+    <None Remove="ClientApp\components\Matches\MatchCourtEdit.tsx" />
+    <None Remove="ClientApp\components\Matches\MatchDecline.tsx" />
+    <None Remove="ClientApp\components\Matches\MatchDetails.tsx" />
+    <None Remove="ClientApp\components\Matches\MatchInfoGrid.tsx" />
+    <None Remove="ClientApp\components\Matches\PlayerPickList.tsx" />
+    <None Remove="ClientApp\components\Matches\RespondToMatch.tsx" />
+    <None Remove="ClientApp\components\MyAccount.tsx" />
+    <None Remove="ClientApp\components\MyProfile.tsx" />
+    <None Remove="ClientApp\components\NavBar.tsx" />
+    <None Remove="ClientApp\components\NavBarMobile.tsx" />
+    <None Remove="ClientApp\components\Players\Players.tsx" />
+    <None Remove="ClientApp\models\app-constants.ts" />
+    <None Remove="ClientApp\models\AppStateProps.ts" />
+    <None Remove="ClientApp\models\ManageLeagueProps.ts" />
+    <None Remove="ClientApp\models\member-viewmodel.ts" />
+    <None Remove="ClientApp\models\UserViewModels.ts" />
+    <None Remove="ClientApp\models\viewmodels\AvailabilityRequest.ts" />
+    <None Remove="ClientApp\models\viewmodels\ContactViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\Enums.ts" />
+    <None Remove="ClientApp\models\viewmodels\LeagueAvailabilityGridViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\LeagueAvailabilityViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\LeagueMemberViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\LeagueSearchViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\LeagueSummaryViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\linesWithAvailability.ts" />
+    <None Remove="ClientApp\models\viewmodels\LineViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\MatchAvailabilityViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\MatchDetailsViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\MatchSummaryViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\MatchViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\PlayerViewModel.ts" />
+    <None Remove="ClientApp\models\viewmodels\ReservationCredentials.ts" />
+    <None Remove="ClientApp\models\viewmodels\ReservationServiceLoginResult.ts" />
+    <None Remove="ClientApp\models\viewmodels\TimeOfDay.ts" />
+    <None Remove="ClientApp\models\viewmodels\VenueViewModel.ts" />
+    <None Remove="ClientApp\routes.tsx" />
+    <None Remove="ClientApp\services\AccountService.ts" />
+    <None Remove="ClientApp\services\Auth.ts" />
+    <None Remove="ClientApp\services\LeagueService.ts" />
+    <None Remove="ClientApp\services\LineService.ts" />
+    <None Remove="ClientApp\services\MatchService.ts" />
+    <None Remove="ClientApp\services\MemberImageService.ts" />
+    <None Remove="ClientApp\services\MemberService.ts" />
+    <None Remove="ClientApp\services\ReservationService.ts" />
+    <None Remove="ClientApp\services\RestUtilities.ts" />
+    <None Remove="ClientApp\services\VenueService.ts" />
+    <None Remove="ClientApp\stores\Auth.ts" />
+    <None Remove="ClientApp\utilities\ArrayHelper.ts" />
+    <None Remove="ClientApp\utilities\ErrorHandling.ts" />
+    <None Remove="ClientApp\utilities\ModelMapping.ts" />
+    <None Remove="ClientApp\utilities\Notification - OLD.ts" />
+    <None Remove="ClientApp\utilities\Notification.ts" />
+    <None Remove="ClientApp\utilities\NumberFormatting.ts" />
+    <None Remove="ClientApp\utilities\RandomNumbers.ts" />
+    <None Remove="ClientApp\utilities\TimeForrmatting.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.22" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.15.4" />
+    <PackageReference Include="Microsoft.AspNetCore.All" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="2.9.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="NCrontab.Advanced" Version="1.3.21" />
+    <PackageReference Include="RestSharp" Version="106.10.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyTennisPartner.Data\MyTennisPartner.Data.csproj" />
+    <ProjectReference Include="..\MyTennisPartner.Models\MyTennisPartner.Models.csproj" />
+    <ProjectReference Include="..\MyTennisPartner.Utilities\MyTennisPartner.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\branding\Branding.ts" />
+    <TypeScriptCompile Include="ClientApp\components\Common\AvailSubsModal.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\AvailabilityModal.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\ConfirmationModal.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputDateTime.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputSelect.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputCheckbox.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputSelectAsync.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputSelectHtml.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputText2.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputText.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\FormInputTime.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\Loader.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\PrivateRoute.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\OkCancelBar.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\SaveDeleteBar.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Common\ValidationMessage.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Guides\CourtReservationsGuide.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueAvailability.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Matches\MatchInfoGrid.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Matches\MatchDecline.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\NavBarMobile.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueMatchItem.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueSchedule.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueRoster.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueDetails.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueMemberItem.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueSearchItem.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueManager.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\LeagueSummary.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Matches\RespondToMatch.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Matches\PlayerPickList.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Matches\MatchCourtEdit.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Matches\MatchManager.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Leagues\SearchLeagues.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Dashboard.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Error.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Auth.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\FormComponentBase.ts" />
+    <TypeScriptCompile Include="ClientApp\components\Matches\MatchDetails.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\MyAccount.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\MyProfile.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\NavBar.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Players\Players.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Templates\ComponentClass.tsx" />
+    <TypeScriptCompile Include="ClientApp\models\app-constants.ts" />
+    <TypeScriptCompile Include="ClientApp\models\AppStateProps.ts" />
+    <TypeScriptCompile Include="ClientApp\models\SelectOption.ts" />
+    <TypeScriptCompile Include="ClientApp\models\ManageLeagueProps.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\MatchDetailsViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\ReservationServiceLoginResult.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\AddressViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\AvailabilityRequest.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\ContactViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\Enums.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\LeagueAvailabilityGridViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\LeagueAvailabilityViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\LeagueMemberViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\LeagueSummaryViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\LinesWithAvailability.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\LineViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\MatchAvailabilityViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\MatchSummaryViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\MatchViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\MemberViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\PlayerViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\ReservationCredentials.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\TimeOfDay.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\UserViewModels.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\LeagueSearchViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\models\viewmodels\VenueViewModel.ts" />
+    <TypeScriptCompile Include="ClientApp\services\AccountService.ts" />
+    <TypeScriptCompile Include="ClientApp\services\Auth.ts" />
+    <TypeScriptCompile Include="ClientApp\services\LineService.ts" />
+    <TypeScriptCompile Include="ClientApp\services\MatchService.ts" />
+    <TypeScriptCompile Include="ClientApp\services\MemberImageService.ts" />
+    <TypeScriptCompile Include="ClientApp\services\LeagueService.ts" />
+    <TypeScriptCompile Include="ClientApp\services\MemberService.ts" />
+    <TypeScriptCompile Include="ClientApp\services\RestUtilities.ts" />
+    <TypeScriptCompile Include="ClientApp\services\ReservationService.ts" />
+    <TypeScriptCompile Include="ClientApp\services\VenueService.ts" />
+    <TypeScriptCompile Include="ClientApp\states\AppStateManager.ts" />
+    <TypeScriptCompile Include="ClientApp\stores\Auth.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\ArrayHelper.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\DateCalculations.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\ErrorHandling.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\GpsMapping.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\ModelMapping.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\Notification.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\RandomNumbers.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\TextFormatting.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\NumberFormatting.ts" />
+    <TypeScriptCompile Include="ClientApp\utilities\TimeForrmatting.ts" />
+  </ItemGroup>
+
+  <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+
+    <!-- In development, the dist files won't exist on the first run or when cloning to
+         a different machine, so rebuild them if not already present. -->
+    <Message Importance="high" Text="Performing first-run Webpack build..." />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --mode development" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --mode development" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --mode production" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --mode production" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>
