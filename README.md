@@ -7,6 +7,8 @@ My Tennis Partner is a full-featured application to organize social tennis.  It 
 
 The app was originally designed for structured leagues that play on a regular basis, with mostly the same players.  But it can also be used for organizing ad-hoc games at irregular intervals.
 
+Last successful build was with NPM version 6.4.1, webpack 4.24.0, React 16.6, .NET Core 2.2.
+
 ## User authentication
 .NET Identity is used for user authentication, with JWT tokens.  Three other options for authentication are also supported (OAUTH2): Facebook, Twitter, and Google.  Users can edit their account info, reset passwords, etc. 
 
