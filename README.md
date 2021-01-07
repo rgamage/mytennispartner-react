@@ -25,7 +25,7 @@ Each Match has a collection of Lines, which correspond to Courts.  A match with 
 ## Availability
 Each Group has an Availability page that shows a grid of all upcoming matches, and each player's availability for that match.  Users can see at a glance if they are short players for any match dates, and can also easily set / change their availability on that page.
 
-# Players
+## Players
 the Player class holds information about a specific Member, in a specic Group, for a given Match.  It holds their availability info for that match, as well as other match/member specific information.  When a player changes their availability, it is the Player class that is updated.
 
 ## Sub Management
