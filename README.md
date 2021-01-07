@@ -1,7 +1,7 @@
 # mytennispartner-react
 Full-featured website for organizing social tennis, using .NET Core &amp; React
 
-This code was originally deployed and hosted at https://mytennispartner.com but has since been deprecated.  It has been replaced by mytennispartner-blazor, a porting of the code to the .NET Blazor framework.  I am keeping this code posted in the hopes it may benefit someone at some point, to see some examples of a fairly complex .NET / React web application.
+This code was originally deployed and hosted at https://mytennispartner.com but the website has since been re-written using the .NET Blazor framework.  I am keeping this code posted in the hopes it may benefit someone at some point, to see some examples of a fairly complex .NET / React web application.
 
 My Tennis Partner is a full-featured application to organize social tennis.  It allows users to create a profile, create leagues/groups, and then schedule matches and assign players to the line-ups.
 
