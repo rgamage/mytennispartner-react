@@ -13,7 +13,6 @@ To connect to this db with SSMS, log in to this server:
 This server name was found by going to the SQL Server Object Explorer in VS, and looking at the server name there that contains our db.
 
 Azure database server: gamage-db
-Admin account: randygamage / August8794
 Server=tcp:gamages-db.database.windows.net,1433
 db name: mytennispartnerdb-dev
 
